@@ -1,0 +1,125 @@
+<?php
+$con=mysqli_connect("localhost","root","","econ");
+if(isset($_POST['submit'])) {
+	$product_id = $_POST['product_id'];
+	$product_cat = $_POST['product_cat'];
+	$product_name = $_POST['product_name'];
+	$product_price = $_POST['product_price'];
+	$product_desp = $_POST['product_desp'];
+	$product_image = $_POST['product_image'];
+	$product_keywords = $_POST['product_keywords'];
+$sql=mysqli_query($con,"INSERT INTO books(product_id,product_cat, product_name, product_price,product_desp,product_image,product_keywords)VALUES('$product_id','$product_cat', '$product_name', '$product_price','$product_desp','$product_image','product_keywords')");
+	if($sql){
+	echo "Data Submit Successful";
+}
+else{
+	echo "Data Submit Error!!";
+}
+
+}
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<script src="js/jquery2.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="main.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+<body>
+<div class="wait overlay">
+	<div class="loader"></div>
+</div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">	
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">B-STAND PIZZA</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-th"></span>Product</a></li>
+				<li><a href="index.php"><span class=""></span>Logout</a></li>
+			</ul>
+		</div>
+	</div>
+	<p><br/></p>
+	<p><br/></p>
+	<p><br/></p>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Add to Menu </div>
+					<div class="panel-body">
+					
+					<form >
+						<div class="row">
+							<div class="col-md-6">
+								<label for="product_id">Product no</label>
+								<input type="text" id="product_id" name="product_id" class="form-control">
+							</div>
+							<div class="col-md-6">
+								<label for="product_cat">Product type </label>
+								<input type="text" id="product_cat" name="product_cat" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label for="product_title">Product Name</label>
+								<input type="text" id="product_title" name="product_title"class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label for="product_price">Product Price</label>
+								<input type="text" id="product_price" name="product_price"class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label for="product_desp">Product Description</label>
+								<input type="text" id="product_desp" name="product_desp"class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label for="product_image">Product Image</label>
+								<input type="text" id="product_image" name="product_image"class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label for="product_keywords">Product Keyword</label>
+								<input type="text" id="product_keywords" name="product_keywords"class="form-control">
+							</div>
+						</div>
+						
+						<p><br/></p>
+						<div class="row">
+							<div class="col-md-12">
+								<input style="width:100%;" value="Submit" type="submit" class="btn btn-success btn-lg">
+							</div>
+						</div>
+						
+					</div>
+					</form>
+					<div class="panel-footer"></div>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+
+</body>
+</html>
